@@ -1,0 +1,157 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+$common-background-color:rgb(233, 230, 224);
+$common-font:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//NAVBAR
+.header {
+  .navbar {
+    nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      position: fixed;
+      margin-top: -80px;
+      z-index: 100;
+
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+        color: black;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          h1 {
+            font-size: 50px;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 2px;
+            font-weight: lighter;
+          }
+        }
+      }
+
+   }
+
+  }
+    
+}
+#dropdown{
+    position: relative;
+      top: 20%;
+      #menu{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 50px;
+    width: fit-content;
+    gap: 30px;
+    position: absolute;
+  top: 20%;
+    left: 70%;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+// SIGN UP
+#signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3{
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 100px;
+  }
+form{
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 30px;
+  .detail{
+    display: flex;
+    gap: 30px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 5px 10px;
+    input{
+      border: none;
+      outline: none;
+    }
+  }
+  button{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    &:hover{
+      background-color: antiquewhite;
+      color: black;
+    }
+  }
+}
+}
+
+
+// Footer Section
+.footer{
+    margin-top: 60px;
+    background-color:$common-background-color;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 140px 40px 140px 40px;
+    justify-content: center;
+    align-items: start; 
+    
+    h1{
+        font-size: 50px;
+    color: black;
+    font-family:$common-font ;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        text-align: left;
+        gap: 20px;
+        p{
+            margin-top: 30px;
+            line-height: 30px;
+        }
+        img{
+            height: 30px;
+            margin-top: 20px;
+            margin-bottom: -80px;
+        }
+        h4{
+         margin-top: 30px;
+         margin-bottom: -35px;
+        }
+
+    }
+   border-bottom: 1px solid white;
+}
+footer{
+    text-align: center;
+    padding: 50px;
+    background-color: $common-background-color;
+}
+

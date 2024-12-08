@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Create Account</title>
+    <title>Home</title>
 </head>
 <body>
     <!-- Navbar section -->
@@ -35,38 +36,76 @@
         </div>
         
     </section>
-<div id="dropdown" style="display: none;">
+    <div id="dropdown" style="display: none;">
             <div id="menu">
             <a href="./index.html">SignUp</a>
             <a href="./login.html">LogIn</a>
             <a href="./login.html" style="display: flex;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #1a1a1a;"></i>LogOut</a>
         </div>
         </div>
-    <!-- Sign UP -->
-    <section id="signup">
-        <h3>Create an account</h3>
-    <form action="login.html">
-        <div class="detail" id="errorfname">
-            <i class="fa-regular fa-user" style="color: #b7b7b8;"></i>
-            <input type="text" placeholder="First Name" id="Fname">
-        </div>
-         <div class="detail" id="errorsname">
-            <i class="fa-regular fa-user" style="color: #b7b7b8;"></i>
-            <input type="text" placeholder="Second Name" id="Sname">
-        </div>
-         <div class="detail" id="erroremail">
-            <i class="fa-regular fa-envelope"  style="color: #b7b7b8;"></i>
-            <input type="email" placeholder="Email" id="Email">
-        </div>
-         <div class="detail" id="errorpass">
-            <i class="fa-solid fa-lock" style="color: #b7b7b8;"></i>
-            <input type="password" placeholder="Password" id="Pass">
-        </div>
-        <button type="submit" onclick=" return signUp()" >REGISTER</button>
 
-    </form>
-    </section>
+        <!-- PRODUCT DETAIL SECTION -->
+     <section class="productDetail">
+        <div class="productImage">
+            <img src="./img/S1img1.png" alt="" id="largeimg" >
+        <div class="smallImage">
+            <img src="./img/S1img2.png" alt="" id="image1" onmouseenter="changeImageById('image1');" onmouseleave="resetImage();" >
+            <img src="./img/S1img3.png" alt="" id="image2" onmouseenter="changeImageById('image2');" onmouseleave="resetImage();" >
+            <img src="./img/s1img4.png" alt="" id="image3" onmouseenter="changeImageById('image3');" onmouseleave="resetImage();" >
+        </div>
+        </div>
+        <div class="about">
+            <h3>Speedcat OG Unisex Sneakers</h3>
+            <h2>Rs 9,800</h2>
+            <p>DISPATCH WITHIN 7 WORKING DAYS</p>
+            <div class="Category">
+                <h5>Color:</h5>
+                <p>Whisp Of Pink-PUMA White
+PUMA Black-PUMA White</p>
+            </div>
+            <h4 style="font-size: large; margin-top: 20px;">size:</h4>
+            <div class="size">
+                <a href="#">UK6</a>
+                <a href="#">UK7</a>
+                <a href="#">UK8</a>
+                <a href="#">UK9</a>
+                 
+            </div>
     
+      <div class="buyNow">
+        <a href="#" style="margin-left: 20px;">ADD TO BAG</a>
+        <a href="checkout.html">BUY IT NOW</a>
+    </div>
+    
+
+  
+    <div class="share">
+        <div class="shareTo">
+            <i class="fa-solid fa-share-nodes" style="color: #00040a;"></i>
+            <h5>Share</h5>
+        </div>
+        <div class="facebook">
+            <i class="fa-brands fa-facebook-f" style="color: #01060e;"></i>
+        </div>
+        <div class="twitter">
+            <i class="fa-brands fa-twitter" style="color: #010204;"></i>
+        </div>
+        <div class="pintrest">
+            <i class="fa-brands fa-pinterest" style="color: #010813;"></i>
+        </div>
+    </div>
+        <div class="clock">
+            <i class="fa-regular fa-clock" style="color: #000714;"></i>
+            <p>Orders ship within 2 to 3 business days.</p>
+        </div>
+        <div class="truck">
+            <i class="fa-solid fa-truck" style="color: #01060e;"></i>
+            <p>Free Shipping over Rs. 2000</p>
+        </div>
+    </div>
+    </div>
+        
+       
     <!-- footerSection -->
     <section class="footer">
         

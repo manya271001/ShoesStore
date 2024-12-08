@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="login.css">
-    <title>LogIn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home</title>
 </head>
 <body>
-     <!-- Navbar section -->
+    <!-- Navbar section -->
     <section class="header">
         <div class="navbar">
            <input type="checkbox" id="click" style="display: none;">
@@ -36,29 +36,24 @@
         </div>
         
     </section>
-<div id="dropdown" style="display: none;">
+    <div id="dropdown" style="display: none;">
             <div id="menu">
             <a href="./index.html">SignUp</a>
             <a href="./login.html">LogIn</a>
             <a href="./login.html" style="display: flex;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #1a1a1a;"></i>LogOut</a>
         </div>
         </div>
-    <!-- LogIN-->
-    <section id="signup">
-        <h3>LOGIN TO ACCOUNT</h3>
-    <form action="">
-         <div class="detail" id="erroremail">
-            <i class="fa-regular fa-envelope"  style="color: #b7b7b8;"></i>
-            <input type="email" placeholder="Email" id="Remail">
-        </div>
-         <div class="detail" id="errorpass">
-            <i class="fa-solid fa-lock" style="color: #b7b7b8;"></i>
-            <input type="password" placeholder="Password" id="Rpass">
-        </div>
-        <button type="submit"  onclick=" return Login()">LogIn</button>
 
-    </form>
+        <!-- CARD SECTION -->
+    <section id="cards">
+        <div id="card">
+            <img src="./img/S1img1.png" alt="" onmouseenter="zoomin()" onmouseleave="zoomout()" onclick="addToCart()">
+            <h3>Speedcat OG Unisex Sneakers</h3>
+            <h3>9,800</h3>
+
+        </div>
     </section>
+       
     <!-- footerSection -->
     <section class="footer">
         
@@ -85,4 +80,3 @@ Mumbai, Maharastra, 400012</p></div>
     </footer>
     <script src="./script.js"></script>
 </body>
-</html>

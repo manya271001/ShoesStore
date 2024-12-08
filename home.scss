@@ -1,3 +1,5 @@
+$common-background-color:rgb(233, 230, 224);
+$common-font:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 #cards{
   padding-top: 100px;
   padding-left: 40px;
@@ -119,13 +121,13 @@
 
 .footer{
     margin-top: 60px;
-    background-color:$common-background-color;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    padding: 140px 40px 140px 40px;
+    padding: 60px 140px;
     justify-content: center;
     align-items: start; 
+    width: 100%;
     
     h1{
         font-size: 50px;
@@ -158,8 +160,4 @@
     }
    border-bottom: 1px solid white;
 }
-footer{
-  
-    padding: 50px;
-    background-color: $common-background-color;
-}
+

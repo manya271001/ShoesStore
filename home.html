@@ -10,8 +10,8 @@
 </head>
 <body>
     <!-- Navbar section -->
-    <section class="header">
-        <div class="navbar">
+    <section class="header" style="display: block; position: fixed; z-index: 100;">
+        <div class="navbar" >
            <input type="checkbox" id="click" style="display: none;">
              <label for="click" style="display: none;"><i class="fa-solid fa-bars" ></i></label>
             <nav>
@@ -29,7 +29,7 @@
                    <ul class="right-navbar">
                    <li><a href="product.html"><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></a></li>
                     <li><a href="login.html" onmouseenter="account()">Account</a></li>
-                    <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping" style="color: #0a0a0a;"></i></a></li>
+                    <li><a href="./checkout.html"><i class="fa-solid fa-cart-shopping" style="color: #0a0a0a"></i></a></li>
                     </ul>
                 
             </nav>
@@ -45,14 +45,14 @@
         </div>
 
         <!-- CARD SECTION -->
-    <section id="cards">
-        <div id="card">
-            <img src="./img/S1img1.png" alt="" onmouseenter="zoomin()" onmouseleave="zoomout()" onclick="addToCart()">
-            <h3>Speedcat OG Unisex Sneakers</h3>
-            <h3>9,800</h3>
+    <section id="cards"  style="padding-top: 100px; padding-left: 100px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+       
+       
 
-        </div>
     </section>
+     <div id="output">
+        
+     </div>
        
     <!-- footerSection -->
     <section class="footer">

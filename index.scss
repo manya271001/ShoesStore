@@ -8,6 +8,8 @@ $common-font:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 //NAVBAR
 .header {
   .navbar {
+    display: block;
+    position: relative;
     nav {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

@@ -172,4 +172,64 @@
           align-items: center;
   gap: 30px;
 }
+
+.footer {
+  margin-top: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 60px 140px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.footer h1 {
+  font-size: 50px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+.footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  text-align: left;
+  gap: 20px;
+}
+
+.footer div p {
+  margin-top: 30px;
+  line-height: 30px;
+}
+
+.footer div img {
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: -80px;
+}
+
+.footer div h4 {
+  margin-top: 30px;
+  margin-bottom: -35px;
+}
 /*# sourceMappingURL=home.css.map */

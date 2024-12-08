@@ -1,0 +1,150 @@
+{
+  "productDetail": [
+    {
+      "id": "1",
+      "name": "Speedcat OG Unisex Sneakers",
+      "price": "9,800",
+      "images": [
+        "./img/S1img1.png",
+        "./img/S1img2.png",
+        "./img/S1img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "2",
+      "name": "Mayze Wedge Women's Sneakers",
+      "price": "5,999",
+      "images": [
+        "./img/s2img1.png",
+        "./img/s2img2.png",
+        "./img/S2img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "3",
+      "name": "Palermo Moda Muted Animal Women's Sneakers",
+      "price": "6,999",
+      "images": [
+        "./img/s3img1.png",
+        "./img/s3img2.png",
+        "./img/S3img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "4",
+      "name": "PUMA x KIDSUPER Easy Rider Unisex Sneakers",
+      "price": "8,999",
+      "images": [
+        "./img/s4img4.png",
+        "./img/s4img3.png",
+        "./img/S4img2.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "5",
+      "name": "Softride Ruby Better Women's Running Shoes",
+      "price": "4,899",
+      "images": [
+        "./img/s5img1.png",
+        "./img/s5img2.png",
+        "./img/S5img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "6",
+      "name": "SOFTRIDE Sophia 2 Star Women's Running Shoes",
+      "price": "3,899",
+      "images": [
+        "./img/s6img1.png",
+        "./img/s6img2.png",
+        "./img/S6img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "7",
+      "name": "Softride Pro Echo Consonance Women's Running Shoes",
+      "price": "3,599",
+      "images": [
+        "./img/s7img1.png",
+        "./img/s7img2.png",
+        "./img/S7img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "8",
+      "name": "Comfort V2 Women's Slip-On Shoes",
+      "price": "3,899",
+      "images": [
+        "./img/s8img2.png",
+        "./img/s8img8.png",
+        "./img/S8img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "9",
+      "name": "Suede Classic XXI Unisex Sneakers",
+      "price": "5,039",
+      "images": [
+        "./img/s10img1.png",
+        "./img/s10img2.png",
+        "./img/S10img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "10",
+      "name": "Palermo OG Unisex Sneakers",
+      "price": "7,799",
+      "images": [
+        "./img/s11img1.png",
+        "./img/s11img2.png",
+        "./img/S11img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "11",
+      "name": "Future Rider Twofold Unisex Sneakers",
+      "price": "3,499",
+      "images": [
+        "./img/s12img1.png",
+        "./img/s12img2.png",
+        "./img/S12img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    },
+    {
+      "id": "12",
+      "name": "Tour Men's Sneakers",
+      "price": "2,899",
+      "images": [
+        "./img/s13img1.png",
+        "./img/s13img2.png",
+        "./img/S13img3.png"
+      ],
+      "description": "DISPATCH WITHIN 7 WORKING DAYS"
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "name": "Speedcat OG Unisex Sneakers",
+      "price": 9800,
+      "image": "./img/S1img1.png"
+    },
+    {
+      "id": "c00e",
+      "name": "Future Rider Twofold Unisex Sneakers",
+      "price": "3,499",
+      "image": "./img/s12img1.png"
+    }
+  ]
+}

@@ -97,25 +97,154 @@ function Login(){
     
 }
 // HOME PAGE 
+async function fetchProducts() {
+    const response = await fetch('http://localhost:3000/productDetail');
+    const products = await response.json();
+    const cardsSection = document.getElementById('cards');
+    cardsSection.innerHTML = products.map(product => `
+        <div class="card" id="card-${product.id}" style="box-shadow: 1px 1px 3px 1px rgb(173, 171, 171); height: 500px; width: 350px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 30px;"> 
+            <img src="${product.images[0]}" alt="${product.name}"  onmouseenter="zoomin(this)" onmouseleave="zoomout(this)" style="height: 70%; width: 95%;" 
+            onclick=" console.log('Clicked product:', ${product.id}); viewProductDetails(${product.id})" >
+            <h3>${product.name}</h3>
+            <h3>Rs ${product.price}</h3>
+            <button style="background-color: black; color: burlywood; padding: 5px 30px; border: none; border-radius: 12px;">KNOW MORE</button>
+        </div>
+    `).join('');
+}
 
-function zoomin(){
-    document.querySelector("img").style.transform="scale(1.2)"
-    document.querySelector("img").style.transition="transform 2000 easeInOut"
+function zoomin(image){
+    image.style.transform = "scale(1.1)";
+    image.style.transition = "transform 0.3s ease-in-out";
+
 }
-function zoomout(){
-    document.querySelector("img").style.transform="scale(1)"
-    document.querySelector("img").style.transition="transform 2000 easeInOut"
+function zoomout(image){
+    image.style.transform = "scale(1)";
+    image.style.transition = "transform 0.3s ease-in-out";
+
 }
-function addToCart(){
-    window.location.href='./add_to_cart.html'
+async function viewProductDetails(id) {
+    const response = await fetch(`http://localhost:3000/productDetail/${id}`);
+    const product = await response.json();
+   
+     document.querySelectorAll('body > *:not(#output):not(#navbar)').forEach(el => el.style.display = 'none');
+    
+    
+   
+    const outputSection = document.getElementById('output');
+    outputSection.innerHTML = `
+        <section class="productDetail" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="productImage">
+                <img src="${product.images[0]}" alt="${product.name}" id="largeimg">
+                <div class="smallImage">
+                    ${product.images.map((img, index) => `
+                        <img src="${img}" id="image${index}" 
+                             onmouseenter="changeImageById('image${index}');" 
+                             onmouseleave="resetImage('${product.images[0]}');">
+                    `).join('')}
+                </div>
+            </div>
+            <div class="about">
+                <h3>${product.name}</h3>
+                <h2>Rs ${product.price}</h2>
+                <p>${product.description}</p>
+                <h4 style="font-size: large; margin-top: 20px;">size:</h4>
+            <div class="size">
+                <a href="#">UK6</a>
+                <a href="#">UK7</a>
+                <a href="#">UK8</a>
+                <a href="#">UK9</a>
+                 
+            </div>
+    
+      <div class="buyNow">
+        <a href="#" style="margin-left: 20px;" onclick="addToBag(${product.id})">ADD TO BAG</a>
+        <a href="checkout.html">BUY IT NOW</a>
+    </div>
+    
+
+  
+    <div class="share">
+        <div class="shareTo">
+            <i class="fa-solid fa-share-nodes" style="color: #00040a;"></i>
+            <h5>Share</h5>
+        </div>
+        <div class="facebook">
+            <i class="fa-brands fa-facebook-f" style="color: #01060e;"></i>
+        </div>
+        <div class="twitter">
+            <i class="fa-brands fa-twitter" style="color: #010204;"></i>
+        </div>
+        <div class="pintrest">
+            <i class="fa-brands fa-pinterest" style="color: #010813;"></i>
+        </div>
+    </div>
+        <div class="clock">
+            <i class="fa-regular fa-clock" style="color: #000714;"></i>
+            <p>Orders ship within 2 to 3 business days.</p>
+        </div>
+        <div class="truck">
+            <i class="fa-solid fa-truck" style="color: #01060e;"></i>
+            <p>Free Shipping over Rs. 2000</p>
+        </div>
+    </div>
+    </div>
+        </section>
+       
+    
+            </div>
+        </section>
+    `;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    fetchProducts();
+});
+       
+    
+    
+
 
 function changeImageById(myid){
     let selectedImg = document.querySelector("#largeimg");
     let hoveredImg = document.querySelector(`#${myid}`);
     selectedImg.src = hoveredImg.src;
 }
-function resetImage() {
+function resetImage(defaultImage) {
     let selectedImg = document.querySelector("#largeimg");
-    selectedImg.src = "./img/S1img1.png";
+    selectedImg.src = defaultImage; 
+}
+
+
+
+async function addToBag(productId) {
+    const response = await fetch(`http://localhost:3000/productDetail/${productId}`);
+    const product = await response.json();
+    const cartItem = {
+        name: product.name,
+        price: product.price,
+        image: product.images[0] 
+    };
+    await fetch('http://localhost:3000/cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cartItem)
+    });
+
+    alert("Added to Bag!");
+}
+async function viewCart() {
+    const response = await fetch('http://localhost:3000/cart');
+    const cartItems = await response.json();
+
+    const cartSection = document.getElementById('cart');
+    cartSection.innerHTML = cartItems.map(item => `
+        <div class="cartItem">
+            <img src="${item.image}" alt="${item.name}" class="cartItemImage">
+            <div class="cartItemDetails">
+                <h3>${item.name}</h3>
+                <p>Price: Rs ${item.price}</p>
+            </div>
+        </div>
+    `).join('');
 }

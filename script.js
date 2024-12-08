@@ -9,6 +9,7 @@ document.addEventListener('click', function (event) {
         dropdown.style.display = 'none'; 
     }
 });
+//SIGN UP FUNCTION
 function signUp(){
     let name=document.querySelector("#Fname").value
     let surname=document.querySelector("#Sname").value
@@ -57,6 +58,7 @@ function signUp(){
     }
     localStorage.setItem("DATA",JSON.stringify(obj))
 }
+// LOGIN FUNCTION
 function Login(){
     let email=document.querySelector("#Remail").value
     let password=document.querySelector("#Rpass").value
@@ -107,7 +109,7 @@ async function fetchProducts() {
             onclick=" console.log('Clicked product:', ${product.id}); viewProductDetails(${product.id})" >
             <h3>${product.name}</h3>
             <h3>Rs ${product.price}</h3>
-            <button style="background-color: black; color: burlywood; padding: 5px 30px; border: none; border-radius: 12px;">KNOW MORE</button>
+            
         </div>
     `).join('');
 }
@@ -122,11 +124,13 @@ function zoomout(image){
     image.style.transition = "transform 0.3s ease-in-out";
 
 }
+
+// PRODUCT DETAIL FUNCTION
 async function viewProductDetails(id) {
     const response = await fetch(`http://localhost:3000/productDetail/${id}`);
     const product = await response.json();
    
-     document.querySelectorAll('body > *:not(#output):not(#navbar)').forEach(el => el.style.display = 'none');
+     document.querySelectorAll('body > *:not(#output):not(.header)').forEach(el => el.style.display = 'none');
     
     
    
@@ -219,6 +223,7 @@ async function addToBag(productId) {
     const response = await fetch(`http://localhost:3000/productDetail/${productId}`);
     const product = await response.json();
     const cartItem = {
+         id: product.id, 
         name: product.name,
         price: product.price,
         image: product.images[0] 
@@ -233,18 +238,59 @@ async function addToBag(productId) {
 
     alert("Added to Bag!");
 }
+
 async function viewCart() {
     const response = await fetch('http://localhost:3000/cart');
     const cartItems = await response.json();
 
     const cartSection = document.getElementById('cart');
     cartSection.innerHTML = cartItems.map(item => `
-        <div class="cartItem">
-            <img src="${item.image}" alt="${item.name}" class="cartItemImage">
-            <div class="cartItemDetails">
+        <div class="cartItem"  style="display: flex; box-shadow:1px 1px 1px 1px grey; width:800px; height:100px; gap:40px;">
+            <img src="${item.image}" alt="${item.name}" class="cartItemImage" style="height: 100px; width: 100px;">
+            <div class="cartItemDetails"  style="display: flex;justify-content: center;
+            align-items: center; gap:20px;">
                 <h3>${item.name}</h3>
                 <p>Price: Rs ${item.price}</p>
+               <i class="fa-solid fa-trash" style="color: #565758;" onclick="deleteItem('${item.id}')"></i>
             </div>
         </div>
     `).join('');
 }
+async function deleteItem(itemId) {
+    await fetch(`http://localhost:3000/cart/${itemId}`, { method: 'DELETE' });
+    viewCart();
+}
+async function viewCart() {
+    const response = await fetch('http://localhost:3000/cart');
+    const cartItems = await response.json();
+
+    const cartSection = document.getElementById('cart');
+    cartSection.innerHTML = cartItems.map(item => `
+        <div class="cartItem"  style="display: flex; box-shadow:1px 1px 1px 1px grey; width:800px; height:100px; gap:40px;">
+            <img src="${item.image}" alt="${item.name}" class="cartItemImage" style="height: 100px; width: 100px;">
+            <div class="cartItemDetails"  style="display: flex;justify-content: center;
+            align-items: center; gap:20px;">
+                <h3>${item.name}</h3>
+                <p>Price: Rs ${item.price}</p>
+               <i class="fa-solid fa-trash" style="color: #565758;" onclick="deleteItem(${item.id})"></i>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function displayTotalAmount() {
+        const response = await fetch('http://localhost:3000/cart');
+        const cartItems = await response.json();
+
+        let totalAmount = 0;
+        for (let item of cartItems) {
+            totalAmount += item.price;
+        }
+        const totalAmountSection = document.getElementById('totalAmount');
+        totalAmountSection.innerHTML = `<h3>Total Amount: Rs ${totalAmount}</h3>`;
+    } 
+
+document.addEventListener('DOMContentLoaded', () => {
+    viewCart(); 
+    displayTotalAmount(); 
+});

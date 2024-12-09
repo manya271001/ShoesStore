@@ -207,49 +207,4 @@ footer {
   padding: 50px;
   background-color: #e9e6e0;
 }
-@media (max-width: 768px) {
-    .footer {
-        grid-template-columns: 1fr;
-        padding: 60px 20px;
-        width: 1200px;
-    }
-
-    .footer h1 {
-        font-size: 40px;
-    }
-
-    div p {
-        margin-top: 20px;
-        line-height: 25px;
-    }
-    footer{
-      width: 1200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 50px 15px;
-        width: 1300px;
-        
-    }
-
-    .footer h1 {
-        font-size: 30px;
-    }
-
-    div p {
-        margin-top: 15px;
-        line-height: 20px;
-    }
-
-    img {
-        height: 25px;
-    }
-
-    h4 {
-        margin-top: 20px;
-        margin-bottom: -30px;
-    }
-}
 /*# sourceMappingURL=index.css.map */

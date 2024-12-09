@@ -273,8 +273,11 @@ async function viewCart() {
                 <h3>${item.name}</h3>
                 <p>Price: Rs ${item.price}</p>
                <i class="fa-solid fa-trash" style="color: #565758;" onclick="deleteItem(${item.id})"></i>
+               
             </div>
+           
         </div>
+         
     `).join('');
 }
 
@@ -294,3 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
     viewCart(); 
     displayTotalAmount(); 
 });
+function message(){
+    window.alert("ORDER CONFIRMED!!!!!!!!!")
+}

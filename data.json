@@ -133,5 +133,12 @@
       "description": "DISPATCH WITHIN 7 WORKING DAYS"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "2",
+      "name": "Mayze Wedge Women's Sneakers",
+      "price": 5999,
+      "image": "./img/s2img1.png"
+    }
+  ]
 }
